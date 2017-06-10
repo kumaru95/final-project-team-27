@@ -1,0 +1,21 @@
+.navitem {
+  display: inline-block;
+}
+
+.card-container {
+  margin: 50px 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 0 1 28%;
+  display: flex;
+  margin: 2px;
+  padding: 20px;
+}
+
+.content {
+  flex: 1 1 80%;
+  margin-left: 10px;
+}

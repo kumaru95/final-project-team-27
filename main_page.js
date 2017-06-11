@@ -1,0 +1,179 @@
+var allElems = [];
+
+function showUploadModal() {
+
+  var modalBackdrop = document.getElementById('modal-backdrop');
+  var uploadModal = document.getElementById('upload-modal');
+
+  modalBackdrop.classList.remove('hidden');
+  uploadModal.classList.remove('hidden');
+
+}
+
+function closeUploadModal() {
+
+  var modalBackdrop = document.getElementById('modal-backdrop');
+  var uploadModal = document.getElementById('upload-modal');
+
+  modalBackdrop.classList.add('hidden');
+  uploadModal.classList.add('hidden');
+
+  clearInputValues();
+
+}
+
+function clearInputValues() {
+
+  var inputElems = document.getElementsByClassName('input-element');
+  for (var i = 0; i < inputElems.length; i++) {
+	var input = inputElems[i].querySelector('input, textarea');
+    input.value = '';
+  }
+}
+
+/*Handlebars Implementation:
+ *
+ * function generateNewElem(pictureURL, captionText, authorText) {
+ *
+ * var cardTemplate = Handlebars.templates.card;
+ * var cardData = {
+ * picture: pictureURL
+ * caption: captionText,
+ * author: authorText
+ * };
+ *
+ * return cardTemplate(cardData);
+ *
+ * }
+*/
+
+//Non-handlebars implementation:
+function generateNewElem(pictureURL, captionText, authorText) {
+
+	console.log(captionText);
+	console.log(authorText);
+
+	var cardContainer = document.getElementsByClassName('card-container')[0];
+	var newCard = document.createElement('article');
+	var newCardPic = document.createElement('div');
+	var newCardPicPar = document.createElement('p');
+	var newCardPicURL = document.createElement('IMG');
+	var newCardContent = document.createElement('div');
+	var newCardCaptionBox = document.createElement('p');
+	var newCardCaption = document.createElement('a');
+	var newCardAuthor = document.createElement('p');
+		
+	newCard.className = 'card';
+	newCardContent.className = 'content';
+	newCardCaption.textContent = captionText;
+	newCardCaption.href = '#';
+	newCardCaptionBox.className = 'caption';
+	newCardAuthor.textContent = authorText;
+	newCardAuthor.className = 'author';
+	newCardPic.className = 'thumbnail';
+	newCardPicURL.src = pictureURL;
+	
+	console.log(newCardCaption.textContent);
+	console.log(newCardAuthor.textContent);
+		
+	cardContainer.appendChild(newCard);
+		newCard.appendChild(newCardPic);
+			newCardPic.appendChild(newCardPicPar);
+				newCardPicPar.appendChild(newCardPicURL);
+		newCard.appendChild(newCardContent);
+			newCardContent.appendChild(newCardCaptionBox);
+				newCardCaptionBox.appendChild(newCardCaption);
+			newCardContent.appendChild(newCardAuthor);
+}
+
+
+/*
+ * This function takes user input values from the "create twit" modal,
+ * generates a new twit using them, and inserts that twit into the document.
+ */
+function insertNewCard() {
+	
+	var pictureURL = document.getElementById('picture').value;
+	var caption = document.getElementById('text-input').value;
+	var author = document.getElementById('author-input').value;
+
+  /*
+   * Only generate the new twit if the user supplied values for both the twit
+   * text and the twit attribution.  Give them an alert if they didn't.
+   */
+	if (pictureURL && caption && author) {
+
+		//Handlebars Implementation:
+		//var newElem = generateNewElem(twitText, twitAttribution);
+		//var cardContainer = document.querySelector('.card-container');
+		//cardContainer.insertAdjacentHTML('beforeend', newElem);
+		//allElems.push(newElem);
+	  
+		generateNewElem(pictureURL, caption, author);
+
+		closeUploadModal();
+
+	} else {
+
+		alert('You must specify both the text and the author of the twit!');
+
+	}
+}
+
+/*
+ * Perform a search over over all the twits based on the search query the user
+ * entered in the navbar.  Only display twits that match the search query.
+ * Display all twits if the search query is empty.
+ */
+function doCardSearch() {
+
+	var searchText = document.getElementById('navbar-search-input');
+	var cards = document.getElementsByClassName('card');
+	var cardContainer = document.getElementsByClassName('card-container')[0];
+
+	for (i = 0; i < cardContainer.childElementCount; i++)
+	{
+		var caption = document.getElementsByClassName('caption')[i].textContent;
+		var author = document.getElementsByClassName('author')[i].textContent;
+			
+		var n1 = caption.includes(searchText.value);
+		var n2 = author.includes(searchText.value);
+			
+		console.log(searchText.value + '\n' + caption + '\n' + author + '\n' + n1 + '\n' + n2);
+			
+		if (!n1 && !n2) cards[i].style.display = 'none';
+		else if (cards[i].style.display == 'none') cards[i].style.display = 'flex';
+	}
+}
+
+
+/*
+ * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
+ */
+window.addEventListener('DOMContentLoaded', function () {
+
+  // Remember all of the existing twits in an array that we can use for search.
+  var elemsCollection = document.getElementsByClassName('card');
+  for (var i = 0; i < elemsCollection.length; i++) {
+    allElems.push(elemsCollection[i]);
+  }
+
+  var uploadButton = document.getElementById('upload');
+  uploadButton.addEventListener('click', showUploadModal);
+
+  var modalCloseButton = document.getElementsByClassName('modal-close-button')[0];
+  modalCloseButton.addEventListener('click', closeUploadModal);
+
+  var modalCancelButton = document.getElementsByClassName('modal-cancel-button')[0];
+  modalCancelButton.addEventListener('click', closeUploadModal);
+
+  var modalAcceptButton = document.getElementsByClassName('modal-accept-button')[0];
+  modalAcceptButton.addEventListener('click', insertNewCard);
+
+  var searchButton = document.getElementById('navbar-search-button');
+  searchButton.addEventListener('click', doCardSearch);
+
+  var searchInput = document.getElementById('navbar-search-input');
+  searchInput.addEventListener('input', doCardSearch);
+
+});

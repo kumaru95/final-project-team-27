@@ -87,20 +87,12 @@ function generateNewElem(pictureURL, captionText, authorText) {
 }
 
 
-/*
- * This function takes user input values from the "create twit" modal,
- * generates a new twit using them, and inserts that twit into the document.
- */
 function insertNewCard() {
 	
 	var pictureURL = document.getElementById('picture').value;
 	var caption = document.getElementById('text-input').value;
 	var author = document.getElementById('author-input').value;
 
-  /*
-   * Only generate the new twit if the user supplied values for both the twit
-   * text and the twit attribution.  Give them an alert if they didn't.
-   */
 	if (pictureURL && caption && author) {
 
 		//Handlebars Implementation:
@@ -120,11 +112,6 @@ function insertNewCard() {
 	}
 }
 
-/*
- * Perform a search over over all the twits based on the search query the user
- * entered in the navbar.  Only display twits that match the search query.
- * Display all twits if the search query is empty.
- */
 function doCardSearch() {
 
 	var searchText = document.getElementById('navbar-search-input');
@@ -147,12 +134,9 @@ function doCardSearch() {
 }
 
 
-/*
- * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
- */
+
 window.addEventListener('DOMContentLoaded', function () {
 
-  // Remember all of the existing twits in an array that we can use for search.
   var elemsCollection = document.getElementsByClassName('card');
   for (var i = 0; i < elemsCollection.length; i++) {
     allElems.push(elemsCollection[i]);

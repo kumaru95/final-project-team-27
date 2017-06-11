@@ -34,5 +34,36 @@
 				</div>
 			</article>
 		</main>
+		
+		<div id="modal-backdrop" class="hidden"></div>
+		<div id="upoad-modal" class="hidden">
+			<div class="modal-dialog">
+
+				<div class="modal-header">
+					<h3>Upload a Thing</h3>
+					<button type="button" class="modal-close-button">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="input-element">
+						<label for="picture">Picture URL</label>
+						<input type="text" id="picture">
+					<div class="input-element">
+						<label for="text-input">Twit text</label>
+						<textarea id="text-input"></textarea>
+					</div>
+					<div class="input-element">
+						<label for="author-input">Author</label>
+						<input type="text" id="author-input">
+					</div>
+				</div>
+
+				<div class="modal-footer">
+				<button type="button" class="modal-cancel-button">Cancel</button>
+				<button type="button" class="modal-accept-button">Upload</button>
+				</div>
+
+			</div>
+		</div>
 	</body>
 </html>

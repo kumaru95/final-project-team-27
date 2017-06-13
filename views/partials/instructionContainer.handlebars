@@ -1,0 +1,15 @@
+<div class = "instruction-container">
+	<div class="thumbnail">
+		<p><img id="image" src = "{{url}}"/></p>
+	</div>
+	<div class="content">
+		<p class="caption">
+		<h3>{{title}}</h3>
+		</p>
+		<div class = "steps-container">
+			{{#each step}}
+				{{> steps}}
+			{{/each}}
+		</div>
+
+	</div>

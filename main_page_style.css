@@ -44,6 +44,16 @@ a{
 	color: white;
 }
 
+.instruction-container{
+	margin: 50px 10%;
+	display: flex;
+	background-color: white;
+}
+
+.step{
+	font-family: "Roboto";
+}
+
 .caption a {
 	color: black;
 }

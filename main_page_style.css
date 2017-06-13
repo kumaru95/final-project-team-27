@@ -1,210 +1,155 @@
-article {
-  display: block;
-}
-
-*, *:before, *:after {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-@-ms-viewport {
-	width: device-width;
-}
-
-a {
-  text-decoration: none;
-}
-
 .site-title {
-  margin: 0;
-  padding: 10px 20px;
-  font-size: 35px;
-  font-weight: 100;
-  background-color: #2c2c32;
-  color: #ffffff;
+	font-family: "Pacifico";
+	font-size: 42px;
+	color: rgb(45,45,45);
+	padding: 0px;
+	margin: 0px 0px 0px 0px;
+	font-weight: normal;
+	text-align: center;
 }
 
-body {
-	-ms-overflow-style: scrollbar;
+.navbar{
+	background-color: rgb(45,45,45);
+	padding: 10px;
 }
 
-@media screen and (max-width: 480px) {
-
-	html, body {
-		min-width: 320px;
-	}
-
+.navlist{
+	list-style-type: none;
+	margin: 0px 20px 0px 20px;
+	padding: 0px;
+	overflow: hidden;
+	display: inline;
 }
 
-body {
-  font-family: Brush Script Std, Brush Script MT, cursive;
-  font-size: 20px;  
-  background-color: #202024;
+.navitem{
+	display: inline-block;
+	font-family: "Roboto", serif;
+	text-decoration: none;
+	font-size: 18px;
 }
 
-.navbar {
-  color: #fff;
-  font-size: 26px;
-  line-height: 22px;
+.navitem a{
+	display: inline-block;
+	padding: 8px;
+	color: rgb(200,200,200);
 }
 
-.navlist {
-  margin: 0 0 0 20px;
-  padding: 0;
+a{
+	text-decoration: none;
+	
 }
 
-.navitem {
-  display: inline-block;
-  float: right;
+.navitem a:hover,
+.navitem a:focus {
+	color: white;
 }
 
-a:hover,
-a:focus {
-  color: #ffffff;
+.caption a {
+	color: black;
 }
 
-a:focus {
-  outline: none;
+.caption a:hover{
+	color: rgb(100,100,100);
 }
 
-.navlink a {
-  padding: 8px 10px;
-  display: inline-block;
+#image{
+	height: auto;
+	width: auto;
+	max-height: 180px;
 }
 
 .navbar-search {
-  margin-right: 20px;
-  padding: 0;
-  line-height: 44px;
-  float: left;
+	float: right;
+	padding: 4px;
 }
 
 #navbar-search-input {
-  padding: 4px;
-  font-size: 16px;
-  background-color: #eee;
-  border: 1px solid #dadada;
-  border-radius: 2px;
+	background-color: rgb(238,238,238);
+	border: 0px;
+	height: 20px;
+	padding: 5px;
+	font-size: 14px;
+	
 }
 
-#navbar-search-input:focus {
-  outline: none;
-  background-color: #fff;
+#navbar-search-input:focus{
+	background-color: white;
 }
 
 #navbar-search-button {
-  margin-left: -5px;
-  font-size: 16px;
-  background: none;
-  border: none;
-  color: #343434;
-  cursor: pointer;
+	background-color: rgb(45,45,45);
+	color: rgb(200,200,200);
+	border: 0px;
+	height: 20px;
+	display: inline-block;
 }
 
-#navbar-search-button:hover {
-  color: #319df6;
-}
-
-#navbar-search-button:focus {
-  color: #319df6;
-  outline: none;
+#navbar-search-button :hover{
+	cursor: pointer;
+	color: white;
 }
 
 .card-container {
   margin: 50px 10%;
   display: flex;
   flex-wrap: wrap;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -moz-align-items: stretch;
-  -webkit-align-items: stretch;
-  -ms-align-items: stretch;
-  align-items: stretch;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
-  -moz-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.card-container .card {
-	margin: 0 1em 2em 1em;
-	width: 30%;
-}
-
-@media screen and (max-width: 1280px) {
-
-	.card-container .card {
-		width: 45%;
-	}
-
-}
-
-@media screen and (max-width: 736px) {
-
-	.card-container .card {
-		width: 100%;
-	}
-
 }
 
 .card {
-    flex: 0 1 28%;
-    display: flex;
+  flex: 0 27%;
+	padding: 10px;
 	border-radius: 4px;
-	margin-bottom: 2em;
-	background: #2c2c32;
-	text-align: center;
-}
-
-.card > :last-child,
-.card > :last-child > :last-child,
-.card > :last-child > :last-child > :last-child {
-	margin-bottom: 0;
-}
-
-.card .thumbnail {
-	margin: 0;
-}
-
-.card .thumbnail img {
-	border-radius: 4px 4px 0 0;
-}
-
-.card .content {
-	padding: 1.5em;
-	width: 100% !important;
-}
-
-@media screen and (max-width: 480px) {
-
-	.card .content {
-		padding: 1em;
-	}
-
-}
-
-.thumbnail {
-  flex: 1 1 80%;
-  text-align: center;
+	background-color: white;
+	font-family: "Roboto", serif;
+	font-size: 16px;
+	margin: 5px;
+	position: relative;
+	display: flex;
+	overflow: hide;
 }
 
 .content {
-  flex: 1 1 80%;
-  text-align: center;
-  font-family: Impact;
+  flex: 10 100%;
+	padding: 5px;
+	min-width: 100px;
 }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
-  min-width: 150px;
+.thumbnail {
+	padding: 5px;
+}
+
+header{
+	margin: 0px;
+	background-color: white;
+}
+
+body{
+	background-color: rgb(45,45,45);
+	margin: 0px;
+}
+
+.input-element {
+  font-size: 20px;
+  margin: 10px 0;
+  font-family: "Roboto";
+}
+
+.input-element label {
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 10px;
+}
+
+.input-element input,
+.input-element textarea {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+}
+
+.input-element textarea {
+  min-height: 64px;
 }
 
 #modal-backdrop {
@@ -238,7 +183,6 @@ img {
   min-height: 300px;
   margin: 40px auto;
   background-color: #fff;
-  border-radius: 15px;
 }
 
 .modal-header {
@@ -266,26 +210,6 @@ img {
   padding: 20px;
 }
 
-.input-element {
-  display: flex;
-  align-items: center;
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-.input-element label {
-  font-weight: 600;
-  flex: 1 75px;
-  margin-right: 10px;
-}
-
-.twit-input-element input {
-  flex: 6 200px;
-  padding: 8px;
-  font-size: 20px;
-  border: 1px solid #aaa;
-}
-
 .modal-footer {
   display: flex;
   justify-content: flex-end;
@@ -294,42 +218,28 @@ img {
 
 .modal-footer button {
   font-size: 20px;
-  background-color: #fff;
+  font-family: "Roboto";
+  background-color: #eee;
   color: #333;
-  border: 1px solid #333;
-  border-radius: 5px;
+  border: 0px solid #333;
   padding: 10px;
   margin-right: 20px;
   cursor: pointer;
 }
 
 .modal-footer .modal-cancel-button:hover {
-  background-color: #eee;
+  background-color: white;
 }
 
 .modal-footer .modal-accept-button {
-  background-color: #319df6;
-  color: #fff;
+  color: #black;
 }
 
 .modal-footer .modal-accept-button:hover {
-  background-color: #087dde;
+  background-color: white;
 }
 
-.error-container {
-  margin-top: 50px;
-  text-align: center;
+h3 {
+	font-family: "Roboto";
+	color: black;
 }
-
-.error-container h2 {
-  margin: 10px 0;
-  font-size: 96px;
-  font-weight: 100;
-}
-
-.error-container h3 {
-  margin: 10px 0;
-  font-size: 36px;
-  font-weight: 400;
-}
-

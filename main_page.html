@@ -3,12 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>HowToMake</title>
+		<link href="https://fonts.googleapis.com/css?family=Barrio|Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
 		<link rel="stylesheet" href="main_page_style.css" media="screen">
 	</head>
 	<body>
 		<header>
-			<h1 class="site-title">HowToMake</h1>
+			<h1 class="site-title">how to make</h1>
 			<nav class="navbar">
 				<ul class="navlist">
 					<li class="navitem navlink active"><a href="#">Home</a></li>
@@ -24,7 +25,7 @@
 		<main class="card-container">
 			<article class="card">
 				<div class="thumbnail">
-					<p><img src = "stickman.jpg"/></p>
+					<p><img id="image" src = "stickman.jpg"/></p>
 				</div>
 				<div class="content">
 					<p class="caption">
@@ -45,13 +46,14 @@
 				</div>
 
 				<div class="modal-body">
+					
+					<div class="input-element">
+						<label for="text-input">Title</label>
+						<input id="text-input"></input>
+					</div>
 					<div class="input-element">
 						<label for="picture">Picture URL</label>
 						<input type="text" id="picture">
-					<div class="input-element">
-						<label for="text-input">Twit text</label>
-						<textarea id="text-input"></textarea>
-					</div>
 					<div class="input-element">
 						<label for="author-input">Author</label>
 						<input type="text" id="author-input">

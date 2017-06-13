@@ -72,6 +72,7 @@ function generateNewElem(pictureURL, captionText, authorText) {
 	newCardAuthor.className = 'author';
 	newCardPic.className = 'thumbnail';
 	newCardPicURL.src = pictureURL;
+	newCardPicURL.id = "image";
 	
 	console.log(newCardCaption.textContent);
 	console.log(newCardAuthor.textContent);
@@ -107,7 +108,7 @@ function insertNewCard() {
 
 	} else {
 
-		alert('You must specify both the text and the author of the twit!');
+		alert('Specify all fields');
 
 	}
 }

@@ -48,10 +48,14 @@ a{
 	margin: 50px 10%;
 	display: flex;
 	background-color: white;
+	border-radius: 4px;
+	overflow: hide;
 }
 
-.step{
+.steps-container{
 	font-family: "Roboto";
+	white-space: pre;
+	overflow: hide;
 }
 
 .caption a {

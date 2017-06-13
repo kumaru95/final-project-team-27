@@ -3,17 +3,18 @@
 	<head>
 		<meta charset="utf-8">
 		<title>HowToMake</title>
+		<link href="https://fonts.googleapis.com/css?family=Barrio|Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
 		<link rel="stylesheet" href="main_page_style.css" media="screen">
 	</head>
 	<body>
 		<header>
-			<h1 class="site-title">HowToMake</h1>
+			<h1 class="site-title">how to make</h1>
 			<nav class="navbar">
 				<ul class="navlist">
 					<li class="navitem navlink active"><a href="#">Home</a></li>
 					<li class="navitem navlink"><a href="#">Trending</a></li>
-					<li class="navitem navlink"><a href="#">Upload</a></li>
+					<li class="navitem navlink" id="upload"><a href="#">Upload</a></li>
 					<li class="navitem navbar-search">
 						<input type="text" id="navbar-search-input" placeholder="Search...">
 						<button type="button" id="navbar-search-button"><i class="fa fa-search"></i></button>
@@ -24,15 +25,51 @@
 		<main class="card-container">
 			<article class="card">
 				<div class="thumbnail">
-					<p><img src = "stickman.jpg"/></p>
+					<p><img id="image" src = "stickman.jpg"/></p>
 				</div>
 				<div class="content">
-					<p class="name">
+					<p class="caption">
 						<a href = "#">Stickman</a>
 					</p>
 					<p class="author">Jerry Stick</p>
 				</div>
 			</article>
 		</main>
+		
+		<div id="modal-backdrop" class="hidden"></div>
+		<div id="upload-modal" class="hidden">
+			<div class="modal-dialog">
+
+				<div class="modal-header">
+					<h3>Upload a Thing</h3>
+					<button type="button" class="modal-close-button">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					
+					<div class="input-element">
+						<label for="text-input">Title</label>
+						<input id="text-input"></input>
+					</div>
+					<div class="input-element">
+						<label for="picture">Picture URL</label>
+						<input type="text" id="picture">
+					</div>
+					<div class="input-element">
+						<label for="author-input">Author</label>
+						<input type="text" id="author-input">
+					</div>
+				</div>
+
+				<div class="modal-footer">
+				<button type="button" class="modal-cancel-button">Cancel</button>
+				<button type="button" class="modal-accept-button">Upload</button>
+				</div>
+
+			</div>
+		</div>
 	</body>
+	
+	<script src="main_page.js" charset="utf-8"></script>
+	
 </html>
